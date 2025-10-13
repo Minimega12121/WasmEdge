@@ -649,6 +649,7 @@ Expect<uint32_t> WasiFdFdstatGet::body(const Runtime::CallingFrame &Frame,
     return __WASI_ERRNO_ADDRNOTAVAIL;
   }
 
+  
   // Check memory instance from module.
   auto *MemInst = Frame.getMemoryByIndex(0);
   if (MemInst == nullptr) {
