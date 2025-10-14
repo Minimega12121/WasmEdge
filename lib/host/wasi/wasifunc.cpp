@@ -645,11 +645,11 @@ Expect<uint32_t> WasiFdFdstatGet::body(const Runtime::CallingFrame &Frame,
                                        int32_t Fd,
                                        uint32_t /* Out */ FdStatPtr) {
   // Alignment checks
-  if (FdStatPtr % alignof(__wasi_fdstat_t) != 0) {
+  if ( FdStatPtr % alignof(__wasi_fdstat_t) != 0) {
     return __WASI_ERRNO_ADDRNOTAVAIL;
   }
 
-  
+
   // Check memory instance from module.
   auto *MemInst = Frame.getMemoryByIndex(0);
   if (MemInst == nullptr) {
