@@ -5431,7 +5431,7 @@ TEST(WasiTest, PointerAlignment) {
               PathPtr, PathSize, AlignedFilestatPtr}, // aligned
           Errno));
       EXPECT_EQ(Errno[0].get<int32_t>(), __WASI_ERRNO_SUCCESS);
-      Env.fini();
+      Env.fini();2
     }
   }
 }
